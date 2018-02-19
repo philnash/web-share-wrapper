@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Web Share Component</title>
+</head>
+
+<body>
+  <web-share-wrapper text="Share" sharetitle="This is a test">
+    <a href="http://twitter.com/">Share on Twitter</a>
+  </web-share-wrapper>
+
+  <script src="../src/index.js"></script>
+  <script>
+    const share = document.querySelector('web-share-wrapper');
+    share.addEventListener('share-failure', (event) => {
+      console.log(event);
+    })
+  </script>
+</body>
+
+</html>
