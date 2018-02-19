@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description":
     "A web component that wraps other share elements to replace with a web share button where supported.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
