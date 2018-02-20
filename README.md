@@ -4,7 +4,7 @@ An experiment for a custom element that can be used to wrap existing share butto
 
 ## ⚠️ Warning
 
-This is an experiment right now, it is not built for production. There are no polyfills and this will straight fail in any browser that doesn't support `customElements`.
+This is an experiment right now, it is not built for production. There are no polyfills and no element will be registered for browsers that don't support `customElements`.
 
 ## How to use
 
