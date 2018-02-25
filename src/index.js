@@ -1,13 +1,13 @@
-
-if ('registerElement' in document) {
-
+if ('customElements' in window) {
   class WebShareWrapper extends HTMLElement {
     constructor() {
       super();
 
       this.webShare = 'share' in navigator;
       if (this.webShare) {
-        this.text = document.createTextNode(this.getAttribute('text') || 'Share');
+        this.text = document.createTextNode(
+          this.getAttribute('text') || 'Share'
+        );
         this.button = document.createElement('button');
         this.button.appendChild(this.text);
         this.innerHTML = '';
@@ -70,5 +70,4 @@ if ('registerElement' in document) {
   }
 
   customElements.define('web-share-wrapper', WebShareWrapper);
-
 }
