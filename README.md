@@ -6,7 +6,7 @@ For example, in supporting browsers the following HTML will show a plain `<butto
 
 ```html
 <web-share-wrapper>
-  <a href="https://twitter.com/intent/tweet?text=Share+Text&url=SHARE_URL">Share on Twitter</a>
+  <a href="https://twitter.com/intent/tweet?text=Share+Text&amp;url=SHARE_URL">Share on Twitter</a>
 </web-share-wrapper>
 ```
 
@@ -28,7 +28,7 @@ Currently, just include `src/index.js` on your page. Then you can use the `<web-
 
 ```html
 <web-share-wrapper>
-  <a href="https://twitter.com/intent/tweet?text=Share+Text&url=SHARE_URL">Share on Twitter</a>
+  <a href="https://twitter.com/intent/tweet?text=Share+Text&amp;url=SHARE_URL">Share on Twitter</a>
 </web-share-wrapper>
 ```
 
@@ -48,7 +48,7 @@ You can set attributes to control the text on the share button and the text and 
 
 ```html
 <web-share-wrapper text="Share this" sharetitle="This amazing thing was shared" sharetext="You should really click on the link to learn more" shareurl="http://example.com/amazing">
-  <a href="https://twitter.com/intent/tweet?text=Share+Text&url=SHARE_URL">Share on Twitter</a>
+  <a href="https://twitter.com/intent/tweet?text=Share+Text&amp;url=SHARE_URL">Share on Twitter</a>
 </web-share-wrapper>
 ```
 
