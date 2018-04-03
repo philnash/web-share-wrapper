@@ -22,7 +22,13 @@ The `<web-share-wrapper>` is a web component that you can use to enhance your we
 
 The component only activates if the Web Share API is available, otherwise it will just show it's contents.
 
-Currently, just include `src/index.js` on your page. Then you can use the `<web-share-wrapper>` component. The intended use is to surround existing share components in order to replace them when the web share API is available.
+### Installation
+
+You can install the component with bower.
+
+```bash
+bower install --save web-share-wrapper
+```
 
 ### Example
 
