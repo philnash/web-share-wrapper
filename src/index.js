@@ -5,19 +5,31 @@ if ('customElements' in window) {
 
       this.webShare = 'share' in navigator;
       if (this.webShare) {
-        this.text = document.createTextNode(
-          this.getAttribute('text') || 'Share'
-        );
-        this.button = document.createElement('button');
-        this.button.appendChild(this.text);
-        this.innerHTML = '';
-        this.appendChild(this.button);
+        const templateId = this.getTemplateId();
+        if (templateId !== null) {
+          const template = document.getElementById(templateId);
+          if (!template) {
+            return;
+          }
+          this.removeChildren();
+          const clone = document.importNode(template.content, true);
+          this.appendChild(clone);
+        } else {
+          this.text = document.createTextNode(
+            this.getAttribute('text') || 'Share'
+          );
+          this.button = document.createElement('button');
+          this.button.appendChild(this.text);
+          this.removeChildren();
+          this.appendChild(this.button);
+        }
       }
     }
 
     connectedCallback() {
       if (this.webShare) {
-        this.button.addEventListener('click', event => {
+        this.addEventListener('click', event => {
+          event.preventDefault();
           const shareOptions = {
             title: this.getTitle(),
             text: this.getText(),
@@ -47,14 +59,14 @@ if ('customElements' in window) {
     }
 
     getTitle() {
-      return (
-        this.getAttribute('sharetitle') ||
-        document.querySelector('title').textContent
-      );
+      return this.getAttribute('sharetitle');
     }
 
     getText() {
-      return this.getAttribute('sharetext');
+      return (
+        this.getAttribute('sharetext') ||
+        document.querySelector('title').textContent
+      );
     }
 
     getUrl() {
@@ -66,6 +78,16 @@ if ('customElements' in window) {
         return canonicalElement.getAttribute('href');
       }
       return window.location.href;
+    }
+
+    getTemplateId() {
+      return this.getAttribute('template');
+    }
+
+    removeChildren() {
+      while (this.firstChild) {
+        this.removeChild(this.firstChild);
+      }
     }
   }
 

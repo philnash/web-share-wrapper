@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Web Share Component</title>
+
+  <style>
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+      color: #121212;
+      line-height: 1.4;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    pre {
+      width: 100%;
+      overflow-x: scroll;
+    }
+
+    footer {
+      padding-top: 2em;
+      padding-bottom: 1em;
+      text-align: center;
+    }
+
+    .resp-sharing-button__link,
+    .resp-sharing-button__icon {
+      display: inline-block
+    }
+
+    .resp-sharing-button__link {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .resp-sharing-button {
+      border-radius: 5px;
+      transition: 25ms ease-out;
+      padding: 0.5em 0.75em;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    }
+
+    .resp-sharing-button__icon svg {
+      width: 1em;
+      height: 1em;
+      margin-right: 0.4em;
+      vertical-align: bottom;
+    }
+
+    .resp-sharing-button--small svg {
+      margin: 0;
+      vertical-align: middle;
+    }
+
+    /* Non solid icons get a stroke */
+
+    .resp-sharing-button__icon {
+      stroke: #fff;
+      fill: none;
+    }
+
+    .resp-sharing-button__icon--solid {
+      fill: #fff;
+      stroke: none;
+    }
+
+    .resp-sharing-button--share {
+      background-color: #2A8E2A;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>The &lt;web-share-wrapper&gt; component</h1>
+
+    <p>The
+      <code>&lt;web-share-wrapper&gt;</code> is a web component that you can use to enhance your website with the Web Share API. If the API is available, the component
+      will replace its contents with a single share button or a template that you provide.</p>
+
+    <p>The component only activates if the Web Share API is available, otherwise it will just show it's contents.</p>
+
+    <p>The component has 5 potential attributes you can use:</p>
+
+    <dl>
+      <dt>
+        <code>text</code>
+      </dt>
+      <dd>Sets the text on the share button.</dd>
+      <dt>
+        <code>template</code>
+      </dt>
+      <dd>An id for a
+        <code>&lt;template&gt;</code> element. The component will find the template, hydrate it and add it as the child of the component. This overrides
+        the
+        <code>text</code> attribute.</dd>
+      <dt>
+        <code>sharetitle</code>
+      </dt>
+      <dd>Sets the title to be shared.</dd>
+      <dt>
+        <code>sharetext</code>
+      </dt>
+      <dd>Sets the text to be shared. Falls back to the text contents of the
+        <code>&lt;title&gt;</code> element.</dd>
+      <dt>
+        <code>shareurl</code>
+      </dt>
+      <dd>Sets the URL to be shared. Fallsback to the
+        <code>href</code> of the canonical link, failing that
+        <code>window.location.href</code>.</dd>
+    </dl>
+
+    <h2>Examples</h2>
+
+    <p>If you are using a browser that supports the Web Share API, you should see share buttons below. Otherwise, you will see
+      the default a Twitter share intent link.</p>
+
+    <h3>Plain button</h3>
+
+    <p>Giving the component a
+      <code>text</code> attribute will output a button with that text.</p>
+
+    <p>
+      <web-share-wrapper text="Share" sharetext="Check out the web-share-wrapper web component" shareurl="https://github.com/philnash/web-share-wrapper">
+        <a href="https://twitter.com/intent/tweet/?text=Check%20out%20%40philnash's%20web-share-wrapper%20web%20component&amp;url=https%3A%2F%2Fgithub.com%2Fphilnash%2Fweb-share-wrapper">Share on Twitter</a>
+      </web-share-wrapper>
+    </p>
+
+    <pre disabled><code>&lt;web-share-wrapper text="Share" sharetext="Check out the web-share-wrapper web component" shareurl="https://github.com/philnash/web-share-wrapper"&gt;
+  &lt;a href="https://twitter.com/intent/tweet/?text=Check%20out%20%40philnash's%20web-share-wrapper%20web%20component&amp;url=https%3A%2F%2Fgithub.com%2Fphilnash%2Fweb-share-wrapper"&gt;
+    Share on Twitter
+  &lt;/a&gt;
+&lt;/web-share-wrapper&gt;</code></pre>
+
+    <h3>Using a template</h3>
+
+    <p>Giving the component a
+      <code>template</code> attribute with the id of a
+      <code>&lt;template&gt;</code> element will hydrate the template and use it as the contents of the component. Check the source for the template.
+      It doesn't use shadow DOM, so you can style it like your other buttons.
+    </p>
+
+    <p>
+      <web-share-wrapper template="share-button" sharetext="Check out the web-share-wrapper web component" shareurl="https://github.com/philnash/web-share-wrapper">
+        <a href="https://twitter.com/intent/tweet/?text=Check%20out%20%40philnash's%20web-share-wrapper%20web%20component&amp;url=https%3A%2F%2Fgithub.com%2Fphilnash%2Fweb-share-wrapper">Share on Twitter</a>
+      </web-share-wrapper>
+    </p>
+
+    <pre><code>&lt;web-share-wrapper template="share-button" sharetext="Check out the web-share-wrapper web component" shareurl="https://github.com/philnash/web-share-wrapper"&gt;
+  &lt;a href="https://twitter.com/intent/tweet/?text=Check%20out%20%40philnash's%20web-share-wrapper%20web%20component&amp;url=https%3A%2F%2Fgithub.com%2Fphilnash%2Fweb-share-wrapper"&gt;
+    Share on Twitter
+  &lt;/a&gt;
+&lt;/web-share-wrapper&gt;</code></pre>
+  </main>
+
+  <footer>
+    <p>Made by
+      <a href="https://philna.sh">Phil Nash</a>
+    </p>
+  </footer>
+
+  <template id="share-button">
+    <a class="resp-sharing-button__link" aria-label="Share on Facebook">
+      <div class="resp-sharing-button resp-sharing-button--share resp-sharing-button--large">
+        <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M383.8 344.4c-16 0-31 5.4-41.7 16l-153-88.4c1.1-5.3 2.2-9.6 2.2-15 0-5.3-1-9.5-2.2-14.9L340 154.8a64.4 64.4 0 0 0 108-46.9 64.2 64.2 0 0 0-128.4 0c0 5.3 1.1 9.6 2.2 15L171 210.1a64.4 64.4 0 0 0-43.9-17A63.3 63.3 0 0 0 64 257a64.2 64.2 0 0 0 108 46.8l152 88.5c-1.2 4.2-2.2 8.5-2.2 13.8a62 62 0 0 0 124 0 62 62 0 0 0-62-61.8z"
+            />
+          </svg>
+        </div>
+        Share
+      </div>
+    </a>
+  </template>
+
+  <script src="../src/index.js"></script>
+  <script>
+    const shares = document.querySelectorAll('web-share-wrapper');
+    shares.forEach((share) => {
+      share.addEventListener('share-failure', (event) => {
+        console.log(event);
+      });
+    });
+  </script>
+
+</body>
+
+</html>
