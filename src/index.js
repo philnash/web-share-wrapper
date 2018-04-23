@@ -23,23 +23,32 @@ if ('customElements' in window) {
           this.removeChildren();
           this.appendChild(this.button);
         }
+        this.share = this.share.bind(this);
       }
+    }
+
+    share(event) {
+      event.preventDefault();
+      const shareOptions = {
+        title: this.getTitle(),
+        text: this.getText(),
+        url: this.getUrl()
+      };
+      navigator
+        .share(shareOptions)
+        .then(() => this.successfulShare(shareOptions))
+        .catch(error => this.abortedShare(error, shareOptions));
     }
 
     connectedCallback() {
       if (this.webShare) {
-        this.addEventListener('click', event => {
-          event.preventDefault();
-          const shareOptions = {
-            title: this.getTitle(),
-            text: this.getText(),
-            url: this.getUrl()
-          };
-          navigator
-            .share(shareOptions)
-            .then(() => this.successfulShare(shareOptions))
-            .catch(error => this.abortedShare(error, shareOptions));
-        });
+        this.addEventListener('click', this.share);
+      }
+    }
+
+    disconnectedCallback() {
+      if (this.webShare) {
+        this.removeEventListener('click', this.share);
       }
     }
 
