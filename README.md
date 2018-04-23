@@ -1,5 +1,7 @@
 # `<web-share-wrapper>`
 
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/philnash/web-share-wrapper)
+
 A custom element that can be used to wrap existing share buttons and replace them with a button that invokes the [Web Share API](https://philna.sh/blog/2017/03/14/the-web-share-api/).
 
 For example, in supporting browsers the following HTML will show a plain `<button>` saying "Share". In browsers that don't support the Web Share API, the default link to share on Twitter will be displayed.
