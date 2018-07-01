@@ -48,8 +48,14 @@ var possibleConstructorReturn = function (self, call) {
   return call && (typeof call === "object" || typeof call === "function") ? call : self;
 };
 
-var WebShareWrapper = function (_HTMLElement) {
-  inherits(WebShareWrapper, _HTMLElement);
+function _CustomElement() {
+  return Reflect.construct(HTMLElement, [], this.__proto__.constructor);
+}
+Object.setPrototypeOf(_CustomElement.prototype, HTMLElement.prototype);
+Object.setPrototypeOf(_CustomElement, HTMLElement);
+
+var WebShareWrapper = function (_CustomElement2) {
+  inherits(WebShareWrapper, _CustomElement2);
 
   function WebShareWrapper() {
     classCallCheck(this, WebShareWrapper);
@@ -163,7 +169,7 @@ var WebShareWrapper = function (_HTMLElement) {
     }
   }]);
   return WebShareWrapper;
-}(HTMLElement);
+}(_CustomElement);
 
 if ('customElements' in window) {
   customElements.define('web-share-wrapper', WebShareWrapper);
