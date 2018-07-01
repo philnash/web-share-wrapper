@@ -1,20 +1,31 @@
 {
   "name": "web-share-wrapper",
   "version": "0.1.1",
-  "description":
-    "A web component that wraps other share elements to replace with a web share button where supported.",
+  "description": "A web component that wraps other share elements to replace with a web share button where supported.",
   "repository": {
     "type": "git",
     "url": "https://github.com/philnash/web-share-wrapper.git"
   },
-  "main": "src/index.js",
+  "main": "dist/web-share-wrapper.cjs.js",
+  "browser": "dist/web-share-wrapper.umd.js",
+  "module": "dist/web-share-wrapper.es.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
   },
-  "keywords": ["web share", "web component"],
+  "keywords": [
+    "web share",
+    "web component"
+  ],
   "author": "Phil Nash <philnash@twilio.com>",
   "license": "MIT",
   "devDependencies": {
-    "bower": "^1.8.4"
+    "babel-core": "^6.26.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.7.0",
+    "bower": "^1.8.4",
+    "rollup": "^0.62.0",
+    "rollup-plugin-babel": "^3.0.6"
   }
 }

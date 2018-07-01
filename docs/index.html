@@ -172,8 +172,7 @@
       <div class="resp-sharing-button resp-sharing-button--share resp-sharing-button--large">
         <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-            <path d="M383.8 344.4c-16 0-31 5.4-41.7 16l-153-88.4c1.1-5.3 2.2-9.6 2.2-15 0-5.3-1-9.5-2.2-14.9L340 154.8a64.4 64.4 0 0 0 108-46.9 64.2 64.2 0 0 0-128.4 0c0 5.3 1.1 9.6 2.2 15L171 210.1a64.4 64.4 0 0 0-43.9-17A63.3 63.3 0 0 0 64 257a64.2 64.2 0 0 0 108 46.8l152 88.5c-1.2 4.2-2.2 8.5-2.2 13.8a62 62 0 0 0 124 0 62 62 0 0 0-62-61.8z"
-            />
+            <path d="M383.8 344.4c-16 0-31 5.4-41.7 16l-153-88.4c1.1-5.3 2.2-9.6 2.2-15 0-5.3-1-9.5-2.2-14.9L340 154.8a64.4 64.4 0 0 0 108-46.9 64.2 64.2 0 0 0-128.4 0c0 5.3 1.1 9.6 2.2 15L171 210.1a64.4 64.4 0 0 0-43.9-17A63.3 63.3 0 0 0 64 257a64.2 64.2 0 0 0 108 46.8l152 88.5c-1.2 4.2-2.2 8.5-2.2 13.8a62 62 0 0 0 124 0 62 62 0 0 0-62-61.8z"></path>
           </svg>
         </div>
         Share
@@ -181,7 +180,7 @@
     </a>
   </template>
 
-  <script src="./index.js"></script>
+  <script src="./../dist/web-share-wrapper.umd.js"></script>
   <script>
     const shares = document.querySelectorAll('web-share-wrapper');
     shares.forEach((share) => {
