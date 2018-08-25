@@ -7,7 +7,7 @@
     "url": "https://github.com/philnash/web-share-wrapper.git"
   },
   "main": "dist/web-share-wrapper.cjs.js",
-  "browser": "dist/web-share-wrapper.min.js",
+  "browser": "dist/web-share-wrapper.umd.js",
   "module": "dist/web-share-wrapper.es.js",
   "unpkg": "dist/web-share-wrapper.min.js",
   "files": [
