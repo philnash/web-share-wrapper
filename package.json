@@ -1,6 +1,6 @@
 {
   "name": "web-share-wrapper",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A web component that wraps other share elements to replace with a web share button where supported.",
   "repository": {
     "type": "git",
