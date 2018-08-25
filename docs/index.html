@@ -82,8 +82,9 @@
     <h1>The &lt;web-share-wrapper&gt; component</h1>
 
     <p>The
-      <code>&lt;web-share-wrapper&gt;</code> is a web component that you can use to enhance your website with the Web Share API. If the API is available, the component
-      will replace its contents with a single share button or a template that you provide.</p>
+      <code>&lt;web-share-wrapper&gt;</code> is a web component that you can use to enhance your website with the Web Share
+      API. If the API is available, the component will replace its contents with a single share button or a template that
+      you provide.</p>
 
     <p>The component only activates if the Web Share API is available, otherwise it will just show it's contents.</p>
 
@@ -98,8 +99,8 @@
         <code>template</code>
       </dt>
       <dd>An id for a
-        <code>&lt;template&gt;</code> element. The component will find the template, hydrate it and add it as the child of the component. This overrides
-        the
+        <code>&lt;template&gt;</code> element. The component will find the template, hydrate it and add it as the child of
+        the component. This overrides the
         <code>text</code> attribute.</dd>
       <dt>
         <code>sharetitle</code>
@@ -120,8 +121,8 @@
 
     <h2>Examples</h2>
 
-    <p>If you are using a browser that supports the Web Share API, you should see share buttons below. Otherwise, you will see
-      the default a Twitter share intent link.</p>
+    <p>If you are using a browser that supports the Web Share API, you should see share buttons below. Otherwise, you will
+      see the default a Twitter share intent link.</p>
 
     <h3>Plain button</h3>
 
@@ -130,7 +131,8 @@
 
     <p>
       <web-share-wrapper text="Share" sharetext="Check out the web-share-wrapper web component" shareurl="https://github.com/philnash/web-share-wrapper">
-        <a href="https://twitter.com/intent/tweet/?text=Check%20out%20%40philnash's%20web-share-wrapper%20web%20component&amp;url=https%3A%2F%2Fgithub.com%2Fphilnash%2Fweb-share-wrapper">Share on Twitter</a>
+        <a href="https://twitter.com/intent/tweet/?text=Check%20out%20%40philnash's%20web-share-wrapper%20web%20component&amp;url=https%3A%2F%2Fgithub.com%2Fphilnash%2Fweb-share-wrapper">Share
+          on Twitter</a>
       </web-share-wrapper>
     </p>
 
@@ -144,13 +146,14 @@
 
     <p>Giving the component a
       <code>template</code> attribute with the id of a
-      <code>&lt;template&gt;</code> element will hydrate the template and use it as the contents of the component. Check the source for the template.
-      It doesn't use shadow DOM, so you can style it like your other buttons.
+      <code>&lt;template&gt;</code> element will hydrate the template and use it as the contents of the component. Check
+      the source for the template. It doesn't use shadow DOM, so you can style it like your other buttons.
     </p>
 
     <p>
       <web-share-wrapper template="share-button" sharetext="Check out the web-share-wrapper web component" shareurl="https://github.com/philnash/web-share-wrapper">
-        <a href="https://twitter.com/intent/tweet/?text=Check%20out%20%40philnash's%20web-share-wrapper%20web%20component&amp;url=https%3A%2F%2Fgithub.com%2Fphilnash%2Fweb-share-wrapper">Share on Twitter</a>
+        <a href="https://twitter.com/intent/tweet/?text=Check%20out%20%40philnash's%20web-share-wrapper%20web%20component&amp;url=https%3A%2F%2Fgithub.com%2Fphilnash%2Fweb-share-wrapper">Share
+          on Twitter</a>
       </web-share-wrapper>
     </p>
 
@@ -180,7 +183,7 @@
     </a>
   </template>
 
-  <script src="./../dist/web-share-wrapper.min.js"></script>
+  <script src="https://unpkg.com/web-share-wrapper"></script>
   <script>
     const shares = document.querySelectorAll('web-share-wrapper');
     shares.forEach((share) => {
