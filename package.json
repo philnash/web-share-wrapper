@@ -18,7 +18,7 @@
     "build": "rollup -c && npm run minify",
     "dev": "rollup -c -w",
     "minify": "uglifyjs dist/web-share-wrapper.umd.js --compress --output dist/web-share-wrapper.min.js",
-    "prepublish": "build"
+    "prepublish": "npm run build"
   },
   "keywords": [
     "web share",
