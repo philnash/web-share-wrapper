@@ -24,10 +24,42 @@ Currently the only browser that supports the Web Share API (Chrome on Android) a
 
 ### Installation
 
+#### Bower
+
 You can install the component with bower.
 
 ```bash
 bower install --save web-share-wrapper
+```
+
+#### npm
+
+You can also install with npm.
+
+```bash
+npm install web-share-wrapper
+```
+
+Once installed, you can either use the minified version by referencing it from the `dist` directory.
+
+```html
+<script src="./node_modules/web-share-wrapper/dist/web-share-wrapper.min.js"></script>
+```
+
+Or if you have a build step, you can require the module.
+
+```javascript
+const WebShareWrapper = require('web-share-wrapper');
+```
+
+#### unpkg
+
+If you want to use the component from the unpkg CDN then you can.
+
+You can get the latest version using the bare URL. See more options on [https://unpkg.com/](https://unpkg.com/).
+
+```html
+<script src="https://unpkg.com/web-share-wrapper"></script>
 ```
 
 ### Example
@@ -67,10 +99,6 @@ The `<web-share-wrapper>` emits one of two events in response to the result of u
 If the share is successful then a `share-success` event is fired. The share title, text and URL are emitted in the `event`'s `details` (though the user may have edited them in the share target).
 
 If the share is unsuccessful then a `share-failure` event is fired. The share title, text, URL and the error that was thrown are emitted in the `event`'s `details`.
-
-## Installation
-
-[TODO: tidy up, release to npm, include installation instructions]
 
 ## Tests
 
