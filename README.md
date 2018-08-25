@@ -12,17 +12,15 @@ For example, in supporting browsers the following HTML will show a plain `<butto
 </web-share-wrapper>
 ```
 
-## ⚠️ Warning
-
-This is an experiment right now, it is not built for production. There are no polyfills and no element will be registered for browsers that don't support `customElements`.
-
-Currently the only browser that supports the Web Share API (Chrome on Android) also supports custom elements and templates, so this should be fine.
-
 ## How to use
 
 The `<web-share-wrapper>` is a web component that you can use to enhance your website with the Web Share API. If the API is available, the component will replace its contents with a single share button or a template that you provide.
 
 The component only activates if the Web Share API is available, otherwise it will just show it's contents.
+
+### Browser support
+
+Currently the only browser that supports the Web Share API (Chrome on Android) also supports custom elements and templates. So this module works where it will work and will fallback to your original HTML where it doesn't.
 
 ### Installation
 
@@ -48,11 +46,11 @@ Check out [this page with more examples](https://philnash.github.io/web-share-wr
 
 You can set attributes to control the text on the share button and the text and URL that is shared. The available attributes are:
 
-* **text**: Sets the text on the share button.
-* **template**: An id for a `<template>` element. The component will find the template, hydrate it and add it as the child of the component. This overrides the `text` attribute.
-* **sharetitle**: Sets the title to be shared.
-* **sharetext**: Sets the text to be shared. Falls back to the text contents of the `<title>` element.
-* **shareurl**: Sets the URL to be shared. Fallsback to the `href` of the canonical link, failing that `window.location.href`.
+- **text**: Sets the text on the share button.
+- **template**: An id for a `<template>` element. The component will find the template, hydrate it and add it as the child of the component. This overrides the `text` attribute.
+- **sharetitle**: Sets the title to be shared.
+- **sharetext**: Sets the text to be shared. Falls back to the text contents of the `<title>` element.
+- **shareurl**: Sets the URL to be shared. Fallsback to the `href` of the canonical link, failing that `window.location.href`.
 
 ```html
 <web-share-wrapper text="Share this" sharetitle="This amazing thing was shared" sharetext="You should really click on the link to learn more" shareurl="http://example.com/amazing">

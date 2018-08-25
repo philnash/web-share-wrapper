@@ -9,11 +9,16 @@
   "main": "dist/web-share-wrapper.cjs.js",
   "browser": "dist/web-share-wrapper.min.js",
   "module": "dist/web-share-wrapper.es.js",
+  "unpkg": "dist/web-share-wrapper.min.js",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c && npm run minify",
     "dev": "rollup -c -w",
-    "minify": "uglifyjs dist/web-share-wrapper.umd.js --compress --output dist/web-share-wrapper.min.js"
+    "minify": "uglifyjs dist/web-share-wrapper.umd.js --compress --output dist/web-share-wrapper.min.js",
+    "prepublish": "build"
   },
   "keywords": [
     "web share",
