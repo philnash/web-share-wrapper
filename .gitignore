@@ -61,4 +61,6 @@ typings/
 .next
 
 # compiled files
-dist/
+dist/web-share-wrapper.cjs.js
+dist/web-share-wrapper.min.js
+dist/web-share-wrapper.es.js
