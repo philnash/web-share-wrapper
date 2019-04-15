@@ -31,7 +31,7 @@
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-custom-element-classes": "^0.1.0",
     "babel-preset-env": "^1.7.0",
-    "bower": "^1.8.4",
+    "bower": "^1.8.8",
     "rollup": "^0.62.0",
     "rollup-plugin-babel": "^3.0.6",
     "uglify-js": "^3.4.2"
