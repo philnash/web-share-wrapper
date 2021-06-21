@@ -99,7 +99,7 @@ class WebShareWrapper extends HTMLElement {
   }
 }
 
-if ('customElements' in window && customElements.get('web-share-wrapper2') == undefined) {
+if ('customElements' in window && customElements.get('web-share-wrapper') == undefined) {
   customElements.define('web-share-wrapper', WebShareWrapper);
 }
 
