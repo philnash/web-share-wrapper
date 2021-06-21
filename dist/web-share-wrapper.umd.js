@@ -175,7 +175,8 @@
     return WebShareWrapper;
   }(_CustomElement);
 
-  if ('customElements' in window) {
+  console.log("Checking: ", customElements.get('web-share-wrapper'))
+  if ('customElements' in window && customElements.get('web-share-wrapper') == undefined) {
     customElements.define('web-share-wrapper', WebShareWrapper);
   }
 
